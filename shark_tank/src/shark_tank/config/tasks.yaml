@@ -1,0 +1,86 @@
+pitch_task:
+  description: >
+    Deliver your business pitch to the sharks.
+    Clearly explain the product, target market, and business model.
+  expected_output: >
+    Exact pitch what the user has given. Nothing else.
+  agent: entrepreneur_user
+
+shark_tech_question:
+  description: >
+    Ask one technical question to assess feasibility and scalability.
+  expected_output: >
+    A single clear question about the technical aspects of the idea.
+  agent: shark_tech
+  max_retries: 1
+
+shark_finance_question:
+  description: >
+    Ask one financial question to understand margins, funding needs, or ROI.
+  expected_output: >
+    A single clear question about the financial aspects of the idea.
+  agent: shark_finance
+  max_retries: 1
+
+shark_marketing_question:
+  description: >
+    Ask one marketing or brand-related question to evaluate market potential.
+  expected_output: >
+    A single clear question about marketing, branding, or customer reach.
+  agent: shark_marketing
+  max_retries: 1
+
+founder_answers:
+  description: >
+    Answer each shark's question as the founder in your own words.
+    These answers will be typed in live by the user before the sharks make offers.
+  expected_output: >
+    A mapping of shark questions to founder's answers.
+  agent: entrepreneur_user
+  human_input: true
+
+shark_tech_verdict:
+  description: >
+    Based on the pitch and the founder's answers, decide whether to invest.
+    If yes, state the offer in {amount_invested} for {percentage_equity} format.
+    If no, clearly explain why.
+  expected_output: >
+    Verdict + Offer (or reason for passing).
+  agent: shark_tech
+  max_retries: 1
+
+shark_finance_verdict:
+  description: >
+    Based on the pitch and the founder's answers, decide whether to invest.
+    If yes, state the offer in {amount_invested} for {percentage_equity} format.
+    If no, clearly explain why.
+  expected_output: >
+    Verdict + Offer (or reason for passing).
+  agent: shark_finance
+  max_retries: 1
+
+shark_marketing_verdict:
+  description: >
+    Based on the pitch and the founder's answers, decide whether to invest.
+    If yes, state the offer in {amount_invested} for {percentage_equity} format.
+    If no, clearly explain why.
+  expected_output: >
+    Verdict + Offer (or reason for passing).
+  agent: shark_marketing
+  max_retries: 1
+
+negotiation_task:
+  description: >
+    Respond to shark offers by accepting, rejecting, or countering.
+  expected_output: >
+    Accept/reject decision or counter-offer in one sentence.
+  agent: entrepreneur_user
+  max_retries: 1
+
+moderator_summary:
+  description: >
+    Summarize the pitch, Q&A, and each shark's verdict and offers into a final engaging closing statement.
+  expected_output: >
+    Short but exciting final recap including the deal outcome.
+  agent: moderator
+  max_retries: 1

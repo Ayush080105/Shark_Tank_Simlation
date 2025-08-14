@@ -1,0 +1,23 @@
+[project]
+name = "shark_tank"
+version = "0.1.0"
+description = "shark_tank using crewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[tools]>=0.157.0,<1.0.0"
+]
+
+[project.scripts]
+shark_tank = "shark_tank.main:run"
+run_crew = "shark_tank.main:run"
+train = "shark_tank.main:train"
+replay = "shark_tank.main:replay"
+test = "shark_tank.main:test"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
