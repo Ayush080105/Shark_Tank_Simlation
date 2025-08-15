@@ -1,0 +1,8 @@
+# Database configuration for Shark Tank application
+database:
+  host: localhost
+  port: 5432
+  name: shark_tank
+  username: postgres
+  password: postgres
+  connection_string: null  # Override with custom connection string if needed
