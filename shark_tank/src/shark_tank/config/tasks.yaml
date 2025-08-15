@@ -6,29 +6,29 @@ pitch_task:
     Exact pitch what the user has given. Nothing else.
   agent: entrepreneur_user
 
-shark_tech_question:
-  description: >
-    Ask one technical question to assess feasibility and scalability.
-  expected_output: >
-    A single clear question about the technical aspects of the idea.
-  agent: shark_tech
-  max_retries: 1
+# shark_tech_question:
+#   description: >
+#     Ask one technical question to assess feasibility and scalability.
+#   expected_output: >
+#     A single clear question about the technical aspects of the idea.
+#   agent: shark_tech
+#   max_retries: 1
 
-shark_finance_question:
-  description: >
-    Ask one financial question to understand margins, funding needs, or ROI.
-  expected_output: >
-    A single clear question about the financial aspects of the idea.
-  agent: shark_finance
-  max_retries: 1
+# shark_finance_question:
+#   description: >
+#     Ask one financial question to understand margins, funding needs, or ROI.
+#   expected_output: >
+#     A single clear question about the financial aspects of the idea.
+#   agent: shark_finance
+#   max_retries: 1
 
-shark_marketing_question:
-  description: >
-    Ask one marketing or brand-related question to evaluate market potential.
-  expected_output: >
-    A single clear question about marketing, branding, or customer reach.
-  agent: shark_marketing
-  max_retries: 1
+# shark_marketing_question:
+#   description: >
+#     Ask one marketing or brand-related question to evaluate market potential.
+#   expected_output: >
+#     A single clear question about marketing, branding, or customer reach.
+#   agent: shark_marketing
+#   max_retries: 1
 
 founder_answers:
   description: >
@@ -39,35 +39,96 @@ founder_answers:
   agent: entrepreneur_user
   human_input: true
 
-shark_tech_verdict:
+# shark_tech_verdict:
+#   description: >
+#     Based on the pitch and the founder's answers, decide whether to invest.
+#     If yes, state the offer in {amount_invested} for {percentage_equity} format.
+#     If no, clearly explain why.
+#   expected_output: >
+#     Verdict + Offer (or reason for passing).
+#   agent: shark_tech
+#   max_retries: 1
+
+# shark_finance_verdict:
+#   description: >
+#     Based on the pitch and the founder's answers, decide whether to invest.
+#     If yes, state the offer in {amount_invested} for {percentage_equity} format.
+#     If no, clearly explain why.
+#   expected_output: >
+#     Verdict + Offer (or reason for passing).
+#   agent: shark_finance
+#   max_retries: 1
+
+# shark_marketing_verdict:
+#   description: >
+#     Based on the pitch and the founder's answers, decide whether to invest.
+#     If yes, state the offer in {amount_invested} for {percentage_equity} format.
+#     If no, clearly explain why.
+#   expected_output: >
+#     Verdict + Offer (or reason for passing).
+#   agent: shark_marketing
+#   max_retries: 1
+
+shark_mark_cuban_verdict:
   description: >
     Based on the pitch and the founder's answers, decide whether to invest.
     If yes, state the offer in {amount_invested} for {percentage_equity} format.
     If no, clearly explain why.
   expected_output: >
     Verdict + Offer (or reason for passing).
-  agent: shark_tech
+  agent: shark_mark_cuban
   max_retries: 1
 
-shark_finance_verdict:
+shark_lori_greiner_verdict:
   description: >
     Based on the pitch and the founder's answers, decide whether to invest.
     If yes, state the offer in {amount_invested} for {percentage_equity} format.
     If no, clearly explain why.
   expected_output: >
     Verdict + Offer (or reason for passing).
-  agent: shark_finance
+  agent: shark_lori_greiner
   max_retries: 1
 
-shark_marketing_verdict:
+shark_barbara_corcoran_verdict:
   description: >
     Based on the pitch and the founder's answers, decide whether to invest.
     If yes, state the offer in {amount_invested} for {percentage_equity} format.
     If no, clearly explain why.
   expected_output: >
     Verdict + Offer (or reason for passing).
-  agent: shark_marketing
+  agent: shark_barbara_corcoran
   max_retries: 1
+
+shark_robert_herjavec_verdict:
+  description: >
+    Based on the pitch and the founder's answers, decide whether to invest.
+    If yes, state the offer in {amount_invested} for {percentage_equity} format.
+    If no, clearly explain why.
+  expected_output: >
+    Verdict + Offer (or reason for passing).
+  agent: shark_robert_herjavec
+  max_retries: 1
+
+shark_kevin_oleary_verdict:
+  description: >
+    Based on the pitch and the founder's answers, decide whether to invest.
+    If yes, state the offer in {amount_invested} for {percentage_equity} format.
+    If no, clearly explain why.
+  expected_output: >
+    Verdict + Offer (or reason for passing).
+  agent: shark_kevin_oleary
+  max_retries: 1
+
+shark_daymond_john_verdict:
+  description: >
+    Based on the pitch and the founder's answers, decide whether to invest.
+    If yes, state the offer in {amount_invested} for {percentage_equity} format.
+    If no, clearly explain why.
+  expected_output: >
+    Verdict + Offer (or reason for passing).
+  agent: shark_daymond_john
+  max_retries: 1
+
 
 negotiation_task:
   description: >
@@ -83,4 +144,91 @@ moderator_summary:
   expected_output: >
     Short but exciting final recap including the deal outcome.
   agent: moderator
+  max_retries: 1
+
+shark_mark_cuban_qna:
+  description: >
+    Channel Mark Cuban’s persona — the confident, tech-savvy disruptor — to ask one 
+    sharp, data-driven question assessing the business model's scalability, traction, 
+    and potential for disruption. The question should pressure-test the entrepreneur’s 
+    conviction and knowledge of their numbers.
+  expected_output: >
+    A single concise, pointed question that challenges the founder’s business logic, 
+    scalability plan, and ability to defend their metrics. The question should not be too long, Make it like a 
+    real shark tank question.
+  agent: shark_mark_cuban
+  max_retries: 1
+
+shark_kevin_oleary_qna:
+  description: >
+    Channel Kevin O’Leary’s persona — “Mr. Wonderful” — to ask one 
+    hard-hitting, numbers-driven question that focuses on cash flow, 
+    profitability, and investor returns. The question should be direct, 
+    possibly uncomfortable, and designed to reveal the financial health 
+    and long-term viability of the business.
+  expected_output: >
+    A single pointed question about financial performance, cash flow, 
+    profitability, or deal structure that tests the founder’s understanding 
+    of their numbers and ability to generate returns.The question should not be too long, Make it like a 
+    real shark tank question.
+  agent: shark_kevin_oleary
+  max_retries: 1
+
+shark_lori_greiner_qna:
+  description: >
+    Channel Lori Greiner’s persona — “The Queen of QVC” — to ask one 
+    market-focused question that assesses retail viability, consumer appeal, 
+    and mass-market potential. The question should be practical, empathetic, 
+    and aimed at determining whether the product can succeed in large-scale retail.
+  expected_output: >
+    A single clear question about target customers, retail readiness, 
+    product differentiation, or consumer validation that reveals the product’s 
+    potential for broad market success.The question should not be too long, Make it like a 
+    real shark tank question.
+  agent: shark_lori_greiner
+  max_retries: 1
+
+shark_barbara_corcoran_qna:
+  description: >
+    Channel Barbara Corcoran’s persona — “The People-Person Powerhouse” — to ask 
+    one psychology-focused question that evaluates the entrepreneur’s resilience, 
+    character, and sales instincts. The question should reveal how the founder 
+    handles challenges, criticism, and high-pressure situations.
+  expected_output: >
+    A single clear question about personal motivation, character traits, 
+    resilience, or creative problem-solving ability that helps determine 
+    whether the entrepreneur has the personality and mindset to succeed.The question should not be too long, Make it like a 
+    real shark tank question.
+  agent: shark_barbara_corcoran
+  max_retries: 1
+
+shark_robert_herjavec_qna:
+  description: >
+    Channel Robert Herjavec’s persona — “The Technology Optimist” — to ask 
+    one question that blends technical insight with business fundamentals. 
+    The question should assess the entrepreneur’s understanding of their 
+    market, technology, and long-term strategy while also revealing 
+    authenticity and commitment.
+  expected_output: >
+    A single clear question about financial fundamentals, market opportunity, 
+    technical implementation, or long-term growth vision that also hints at 
+    evaluating the founder’s passion and work ethic.The question should not be too long, Make it like a 
+    real shark tank question.
+  agent: shark_robert_herjavec
+  max_retries: 1
+
+shark_daymond_john_qna:
+  description: >
+    Channel Daymond John’s persona — “The Brand Builder” — to ask 
+    one question focused on brand positioning, market differentiation, 
+    and the founder’s vision for scaling the business into a recognizable, 
+    lifestyle-oriented brand. The question should uncover the entrepreneur’s 
+    ability to articulate their brand story, connect with target audiences, 
+    and leverage partnerships or licensing for growth.
+  expected_output: >
+    A single clear question about brand identity, market positioning, 
+    or growth through strategic partnerships that also evaluates the 
+    founder’s hustle, adaptability, and commitment to embodying the brand.The question should not be too long, Make it like a 
+    real shark tank question.
+  agent: shark_daymond_john
   max_retries: 1
